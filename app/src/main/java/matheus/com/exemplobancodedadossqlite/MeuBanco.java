@@ -81,5 +81,20 @@ public class MeuBanco extends SQLiteOpenHelper {
         return clientes;
     }
 
+    public void alterar (Cliente c){
+    SQLiteDatabase db = getWritableDatabase();
+    ContentValues cv = new ContentValues();
+    cv.put("nome",c.getNome());
+    cv.put("email",c.getEmail());
+    db.update(TB_CLIENTE,cv," id = ? ",new String[]{String.valueOf(c.getId()) });
 
+    db.close();
+    }
+    public void excluir (int id){
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.delete(TB_CLIENTE, "id = ?", new String[] { String.valueOf(id) });
+
+        db.close();
+    }
 }

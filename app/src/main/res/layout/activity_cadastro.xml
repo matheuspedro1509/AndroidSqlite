@@ -28,4 +28,11 @@
         android:layout_height="wrap_content"
         android:text="@string/salvar"
         android:onClick="salvar"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excluir"
+        android:visibility="gone"
+        android:onClick="excluir"
+        android:id="@+id/btnExcluir"/>
 </LinearLayout>
